@@ -1,5 +1,8 @@
 const pokeAPI = 'https://pokeapi.co/api/v2/pokemon/';
 
+function capitalize(str) {
+    return str[0].toUpperCase() + str.substring(1, str.length);
+}
 
 $(document).ready(function () {
 
@@ -7,7 +10,24 @@ $(document).ready(function () {
 
 
     $('#surprise').click(function () {
-        $('.container').show();
+        const randomPokemon = Math.ceil(Math.random() * 1017)
+
+        fetch(`${pokeAPI}${randomPokemon}`)
+            .then(r => r.json())
+            .then(pokemon => {
+                console.log('pokemon', pokemon);
+
+                const pokeMarkup = `
+                    <p>${capitalize(pokemon.name)}</p>
+                `;
+
+                console.log('pokeMarkup', pokeMarkup.trim());
+
+                $('#pokemon').append(pokeMarkup);
+
+                $('.container').show();
+            })
+
     });
 
 });

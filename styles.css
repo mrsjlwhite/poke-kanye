@@ -2,10 +2,6 @@ body {
     background-color: blanchedalmond;
 }
 
-.hidden {
-    display: none;
-}
-
 .surprise-btn {
     border: green;
     background-color: palegreen;
@@ -26,6 +22,5 @@ body {
     flex-direction: row;
     align-content: center;
     justify-content: space-evenly;
-    margin: auto;
 }
 
