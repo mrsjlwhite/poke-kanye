@@ -16,9 +16,14 @@ $(document).ready(function () {
             .then(r => r.json())
             .then(pokemon => {
                 console.log('pokemon', pokemon);
+                
+                $('.poke-container').remove();
 
                 const pokeMarkup = `
+                <div class='poke-container'>
+                    <img src="${pokemon.sprites.front_shiny}" />
                     <p>${capitalize(pokemon.name)}</p>
+                </div>
                 `;
 
                 console.log('pokeMarkup', pokeMarkup.trim());
