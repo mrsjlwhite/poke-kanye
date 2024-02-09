@@ -2,6 +2,10 @@ body {
     background-color: blanchedalmond;
 }
 
+main {
+    padding-top: 5%;
+}
+
 .surprise-btn {
     border: green;
     background-color: palegreen;
@@ -10,6 +14,7 @@ body {
     padding: 10px;
     margin: auto;
     display: block;
+    font-size: 3rem;
 }
 
 .surprise-btn:hover {
@@ -18,15 +23,43 @@ body {
 }
 
 .container {
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    justify-content: space-evenly;
+    display: block;
+    margin: auto;
 }
 
 .poke-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+}
+
+.pokemon {
     text-align: center;
+}
+
+.bubble {
+    height: 12rem;
+    width: 40%;
+    min-width: 200px;
+    background: ivory;
+    display: block;
+    margin: 0 auto;
+    border-radius: 20px;
+    margin-top: 50px;
+    font-size: 2rem;
+    text-align: center;
+    padding: 2rem;
+}
+
+.pointer {
+    height: 40px;
+    width: 40px;
+    background: ivory;
+    margin: 0 auto;
+    transform: rotate(45deg);
+    border-radius: 0 0 12px 0;
+    margin-top: -22px;
+    position: relative;
+    left: calc(0.5vw - 50px);
 }
