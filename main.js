@@ -28,7 +28,7 @@ $(document).ready(function () {
 
         fetch(kanyeAPI)
             .then(r => r.json())
-            .then(kanye => quote = kanye.quote.length ? kanye.quote : 'I love sleep; it\'s my favorite.')
+            .then(kanye => quote = kanye.quote && kanye.quote.trim() ? kanye.quote : 'I love sleep; it\'s my favorite.')
             .then(
                 fetch(`${pokeAPI}${randomPokemon}`)
                     .then(r => r.json())
