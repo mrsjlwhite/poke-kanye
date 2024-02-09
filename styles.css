@@ -1,23 +1,29 @@
+:root {
+    --blue: #2658b5;
+    --yellow: #ffcc01;
+}
+
 body {
     background-color: blanchedalmond;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .title {
     font-family: 'Pokemon Solid', sans-serif;
     font-size: 3.5rem;
-    letter-spacing: 10px;
-}
-
-.main-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 5%;
+    letter-spacing: 2px;
+    color: var(--yellow);
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: var(--blue);
 }
 
 .surprise-btn {
-    background-color: #EA4C89;
+    background-color: var(--blue);
     border-radius: 8px;
     border-style: none;
     color: #FFFFFF;
@@ -34,7 +40,8 @@ body {
 }
 
 .surprise-btn:hover {
-    background-color: #F082AC;
+    background-color: var(--yellow);
+    color: darkslategrey;
 }
 
 .surprise-btn:active {
@@ -64,7 +71,6 @@ body {
 }
 
 .bubble {
-    /* height: 12rem; */
     width: 40%;
     min-width: 200px;
     background: ivory;
