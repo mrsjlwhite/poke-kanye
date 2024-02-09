@@ -8,13 +8,13 @@ function capitalize(str) {
 function getPokeMarkup(pokemon, quote) {
     return `
     <div class='poke-container'>
+        <h2 class='poke-name'>${capitalize(pokemon.name)} once said...</h2>
         <div>
             <div class="bubble">${quote}</div>
             <div class="pointer"></div>
         </div>
         <div class='pokemon'>
             <img src="${pokemon.sprites.front_shiny}" />
-            <p>${capitalize(pokemon.name)}</p>
         </div>
     </div>
     `;
@@ -28,14 +28,11 @@ $(document).ready(function () {
 
         fetch(kanyeAPI)
             .then(r => r.json())
-            .then(kanye => quote = kanye.quote)
+            .then(kanye => quote = kanye.quote.length ? kanye.quote : 'I love sleep; it\'s my favorite.')
             .then(
                 fetch(`${pokeAPI}${randomPokemon}`)
                     .then(r => r.json())
                     .then(pokemon => {
-                        console.log('quote', quote);
-                        console.log('pokemon', pokemon);
-
                         $('.poke-container').remove();
                         $('#pokemon').append(getPokeMarkup(pokemon, quote));
                         $('.container').show();
